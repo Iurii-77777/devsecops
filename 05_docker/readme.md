@@ -53,4 +53,4 @@ sudo podman build --no-cache -t mydjangoapp .
 sudo podman run -d -p 8080:8000 --name mydjango mydjangoapp
 ```
 # 5. Скриншот из web браузера:
-
+![Screenshot](web.jpg)

@@ -1,4 +1,10 @@
 # 1. Общий каталог файлов:
+### Комада для созздания структуры каталога, остальные файлы создаются в ручную:
+```
+mkdir myproject
+cd myproject
+django-admin startproject myproject .
+```
 ```
 [lumis@localhost myproject]$ tree
 .
@@ -47,10 +53,16 @@ def home(request):
 #Запускаем сервер разработки Django (для демо)
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 ```
-# 4.Команды для запуска:
+# 4. Содержимое файла с зависимостями:
+```
+[lumis@localhost myproject]$ cat requirements.txt
+Django==4.2.7
+gunicorn==21.2.0
+```
+# 5.Команды для запуска:
 ```
 sudo podman build --no-cache -t mydjangoapp .
 sudo podman run -d -p 8080:8000 --name mydjango mydjangoapp
 ```
-# 5. Скриншот из web браузера:
+# 6. Скриншот из web браузера:
 ![Screenshot](web.jpg)

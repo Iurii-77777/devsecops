@@ -1,5 +1,5 @@
 # 1. Общий каталог файлов:
-
+```
 [lumis@localhost myproject]$ tree
 .
 ├── Dockerfile
@@ -23,7 +23,7 @@
 └── requirements.txt
 
 2 directories, 8 files
-
+```
 
 # 2. Содержимое докер файла:
 ```

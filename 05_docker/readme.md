@@ -3,9 +3,13 @@
 [lumis@localhost myproject]$ tree
 .
 ├── Dockerfile
+
 ├── hello
+
 │   └── views.py
+
 ├── manage.py
+
 ├── myproject
 │   ├── __init__.py
 │   ├── settings.py

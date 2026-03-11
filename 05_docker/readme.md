@@ -3,23 +3,14 @@
 [lumis@localhost myproject]$ tree
 .
 ├── Dockerfile
-
 ├── hello
-
 │   └── views.py
-
 ├── manage.py
-
 ├── myproject
-
 │   ├── __init__.py
-
 │   ├── settings.py
-
 │   ├── urls.py
-
 │   └── wsgi.py
-
 └── requirements.txt
 
 2 directories, 8 files

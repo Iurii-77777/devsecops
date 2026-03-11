@@ -25,7 +25,7 @@
 2 directories, 8 files
 
 
-2. Содержимое докер файла:
+# 2. Содержимое докер файла:
 
 [lumis@localhost myproject]$ cat Dockerfile
 #Используем официальный образ Python
@@ -44,7 +44,7 @@ COPY . .
 #Указываем порт, который будет слушать приложение
 EXPOSE 8000
 
-3. Содержимое файла для web:
+# 3. Содержимое файла для web:
 
 [lumis@localhost myproject]$ cat hello/views.py
 from django.http import HttpResponse
@@ -55,7 +55,7 @@ def home(request):
 #Запускаем сервер разработки Django (для демо)
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
-4.Команды для запуска:
+# 4.Команды для запуска:
 sudo podman build --no-cache -t mydjangoapp .
 sudo podman run -d -p 8080:8000 --name mydjango mydjangoapp
 Скриншот из web браузера

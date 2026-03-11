@@ -1,4 +1,4 @@
-*1. Общий каталог файлов:*
+# 1. Общий каталог файлов:
 
 [lumis@localhost myproject]$ tree
 .
@@ -19,20 +19,20 @@
 2. Содержимое докер файла:
 
 [lumis@localhost myproject]$ cat Dockerfile
-# Используем официальный образ Python
+#Используем официальный образ Python
 FROM python:3.11-slim
 
-# Устанавливаем рабочую директорию
+#Устанавливаем рабочую директорию
 WORKDIR /APP
 
-# Копируем зависимости и устанавливаем их
+#Копируем зависимости и устанавливаем их
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем весь проект
+#Копируем весь проект
 COPY . .
 
-# Указываем порт, который будет слушать приложение
+#Указываем порт, который будет слушать приложение
 EXPOSE 8000
 
 3. Содержимое файла для web:
@@ -43,7 +43,7 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("<h1>Hello, Docker! Это заглушка Django приложения.</h1>")
 
-# Запускаем сервер разработки Django (для демо)
+#Запускаем сервер разработки Django (для демо)
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 4.Команды для запуска:

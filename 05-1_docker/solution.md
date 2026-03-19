@@ -1,6 +1,8 @@
 1. Профиль seccomp, который запрещает команду mkdir, но разрешать все остальные:
+```
 vim no-mkdir.json
-
+```
+```
  {
     "defaultAction": "SCMP_ACT_ALLOW",
     "architectures": [
@@ -15,13 +17,15 @@ vim no-mkdir.json
         }
     ]
 }
-
+```
+```
 podman run --rm -it --security-opt seccomp=no-mkdir.json alpine sh
-
+```
 2. Модифицированый apparmor профиль для nginx так, чтобы команда touch была запрещена во всей файловой системе контейнера:
-
+```
 sudo vim /etc/apparmor.d/docker-nginx
-
+```
+```
 #include <tunables/global>
 
 profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
@@ -94,6 +98,10 @@ profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
   deny /sys/firmware/** rwklx,
   deny /sys/kernel/security/** rwklx,
 }
-
+```
+```
 sudo apparmor_parser -r /etc/apparmor.d/docker-nginx
+```
+```
 docker run -d --name nginx-apparmor --security-opt apparmor=docker-nginx nginx
+```

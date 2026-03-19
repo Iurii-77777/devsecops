@@ -1,4 +1,4 @@
-1. Профиль seccomp, который запрещает команду mkdir, но разрешать все остальные:
+## 1. Профиль seccomp, который запрещает команду mkdir, но разрешать все остальные:
 ```
 vim no-mkdir.json
 ```
@@ -21,7 +21,7 @@ vim no-mkdir.json
 ```
 podman run --rm -it --security-opt seccomp=no-mkdir.json alpine sh
 ```
-2. Модифицированый apparmor профиль для nginx так, чтобы команда touch была запрещена во всей файловой системе контейнера:
+## 2. Модифицированый apparmor профиль для nginx так, чтобы команда touch была запрещена во всей файловой системе контейнера:
 ```
 sudo vim /etc/apparmor.d/docker-nginx
 ```
